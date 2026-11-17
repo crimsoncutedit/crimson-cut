@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080709">
+  <meta name="description" content="Crimson Cut — premium video editing for brands, creators and businesses. Smooth edits. Sharp results.">
+  <title>Crimson Cut — Your Vision. Our Edit.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080709;
+      --bg-soft: #100c10;
+      --panel: #141014;
+      --text: #f5f1f2;
+      --muted: #aaa0a6;
+      --red: #f00050;
+      --red-soft: rgba(240,0,80,.16);
+      --line: rgba(240,0,80,.52);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: var(--sans); font-weight: 300; overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+      background:
+        radial-gradient(ellipse at 8% 12%, rgba(120,0,35,.20), transparent 32%),
+        radial-gradient(ellipse at 90% 78%, rgba(110,0,40,.16), transparent 35%),
+        linear-gradient(115deg, transparent 48%, rgba(255,255,255,.018) 49%, transparent 55%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: auto; }
+    .eyebrow {
+      color: var(--red); text-transform: uppercase; letter-spacing: .28em;
+      font-size: .68rem; font-weight: 600;
+    }
+    .serif { font-family: var(--serif); font-weight: 500; }
+    .accent { color: var(--red); }
+    .section { padding: 112px 0; position: relative; }
+    .section-heading { max-width: 720px; margin-bottom: 48px; }
+    .section-heading h2 {
+      font: 500 clamp(2.8rem, 6vw, 5.2rem)/.94 var(--serif);
+      margin: 16px 0 18px; letter-spacing: -.025em;
+    }
+    .section-heading p { color: var(--muted); line-height: 1.8; max-width: 570px; }
+    .topline { border-top: 1px solid rgba(255,255,255,.08); }
+
+    /* Navigation */
+    .nav {
+      position: absolute; z-index: 10; top: 0; left: 0; right: 0;
+      padding: 25px 0; border-bottom: 1px solid rgba(255,255,255,.07);
+      background: linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark { width: 35px; height: 35px; color: var(--red); }
+    .brand-name { font: 500 1.35rem var(--serif); letter-spacing: .16em; }
+    .brand-name span { color: var(--red); }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a { font-size: .72rem; color: #d4cbd0; letter-spacing: .13em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta { border: 1px solid var(--line); padding: 12px 18px; }
+    .menu-toggle { display: none; color: var(--text); border: 1px solid #45313a; background: transparent; padding: 9px 12px; }
+
+    /* Hero */
+    .hero {
+      min-height: 900px; min-height: min(100svh, 1000px); display: flex; align-items: center;
+      position: relative; isolation: isolate; overflow: hidden; padding: 145px 0 90px;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(8,7,9,.97) 0%, rgba(8,7,9,.86) 48%, rgba(8,7,9,.40) 100%),
+        radial-gradient(ellipse at 78% 60%, rgba(150,0,55,.22), transparent 38%),
+        linear-gradient(145deg, #120b10, #080709 55%, #170b12);
+    }
+    .hero::after {
+      content: ""; position: absolute; z-index: -1; width: 680px; height: 680px;
+      right: -240px; top: 15%; border: 1px solid rgba(240,0,80,.25);
+      border-radius: 50%; box-shadow: 0 0 0 28px rgba(240,0,80,.025), 0 0 0 75px rgba(240,0,80,.018);
+    }
+    .hero-content { max-width: 850px; position: relative; }
+    .hero-brand { display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 70px; }
+    .hero-brand .brand-mark { width: 58px; height: 58px; }
+    .hero-brand-name { font: 500 1.35rem var(--serif); letter-spacing: .25em; text-align: center; }
+    .tagline { color: #c8bec4; font-size: .78rem; letter-spacing: .22em; text-align: center; margin-top: 7px; }
+    .hero-rule { height: 1px; width: 100%; background: linear-gradient(90deg, transparent, var(--red), transparent); margin: 18px auto 0; }
+    .hero h1 {
+      font: 500 clamp(4rem, 10.5vw, 9.3rem)/.78 var(--serif);
+      letter-spacing: -.045em; text-transform: uppercase; margin: 0;
+    }
+    .hero h1 span { display: block; }
+    .hero h1 .second { color: var(--red); padding-left: 9%; margin-top: 20px; }
+    .hero-copy {
+      margin: 36px 0 34px; color: #d2cbd0; font-size: clamp(.95rem, 1.7vw, 1.18rem);
+      line-height: 1.8; letter-spacing: .08em; max-width: 570px;
+    }
+    .hero-copy em { color: var(--red); font-family: var(--serif); font-size: 1.35em; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 15px 23px; border: 1px solid var(--red); color: white;
+      letter-spacing: .14em; text-transform: uppercase; font-size: .7rem;
+      transition: .25s ease; cursor: pointer;
+    }
+    .btn.primary { background: var(--red); color: #fff; }
+    .btn:hover { background: #fff; color: #090709; border-color: #fff; transform: translateY(-2px); }
+    .hero-note { margin-top: 72px; display: flex; align-items: center; gap: 28px; color: #c9c0c5; }
+    .hero-note .note { display: flex; gap: 10px; align-items: center; font-size: .72rem; letter-spacing: .09em; }
+    .note-icon { color: var(--red); font-size: 1.3rem; }
+    .note-divider { height: 34px; width: 1px; background: var(--line); }
+    .hero-corner { position: absolute; right: 7%; bottom: 9%; color: rgba(240,0,80,.8); font: 500 1rem var(--serif); letter-spacing: .32em; writing-mode: vertical-rl; }
+
+    /* Intro */
+    .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
+    .intro-copy h2 { font: 500 clamp(3rem, 6vw, 5.7rem)/.9 var(--serif); margin: 18px 0 24px; }
+    .intro-copy p { color: var(--muted); line-height: 1.9; max-width: 570px; }
+    .intro-visual {
+      min-height: 420px; position: relative; border: 1px solid rgba(240,0,80,.25);
+      background: linear-gradient(140deg, rgba(240,0,80,.12), transparent 45%), #100c10;
+      display: grid; place-items: center; overflow: hidden;
+    }
+    .intro-visual::before, .intro-visual::after {
+      content: ""; position: absolute; border: 1px solid rgba(240,0,80,.32); border-radius: 50%;
+      width: 360px; height: 360px;
+    }
+    .intro-visual::after { width: 280px; height: 280px; }
+    .orbit-mark { width: 115px; height: 115px; color: var(--red); z-index: 1; filter: drop-shadow(0 0 22px rgba(240,0,80,.28)); }
+    .visual-caption { position: absolute; bottom: 22px; left: 24px; font-size: .65rem; letter-spacing: .24em; color: #c9b9c2; text-transform: uppercase; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(240,0,80,.22); border: 1px solid rgba(240,0,80,.22); }
+    .service {
+      background: #0d0a0d; padding: 34px 30px 38px; min-height: 250px; transition: background .25s;
+    }
+    .service:hover { background: #171017; }
+    .service-number { color: var(--red); font: 500 1rem var(--serif); }
+    .service h3 { font: 500 2rem var(--serif); margin: 28px 0 12px; }
+    .service p { color: var(--muted); font-size: .88rem; line-height: 1.75; margin: 0; }
+
+    /* Work */
+    .work-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; }
+    .work-card { position: relative; overflow: hidden; min-height: 320px; background: #171016; border: 1px solid rgba(255,255,255,.08); }
+    .work-card.large { min-height: 510px; }
+    .work-art {
+      position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden;
+      background: radial-gradient(ellipse at 65% 40%, rgba(240,0,80,.26), transparent 35%), linear-gradient(135deg, #25121c, #09080a 65%);
+    }
+    .work-art::before {
+      content: ""; position: absolute; width: 65%; aspect-ratio: 1; border: 1px solid rgba(240,0,80,.38);
+      border-radius: 50%; transform: translate(22%, -5%); box-shadow: 0 0 0 25px rgba(240,0,80,.025), 0 0 0 60px rgba(240,0,80,.02);
+    }
+    .play {
+      width: 64px; height: 64px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.75);
+      border-radius: 50%; color: white; font-size: 1.1rem; padding-left: 3px; z-index: 1;
+    }
+    .work-card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; opacity: .42; filter: saturate(.7) contrast(1.1); }
+    .work-info { position: absolute; left: 26px; bottom: 24px; z-index: 2; }
+    .work-info small { color: var(--red); text-transform: uppercase; letter-spacing: .2em; font-size: .62rem; }
+    .work-info h3 { font: 500 2rem var(--serif); margin: 7px 0 0; }
+    .work-side { display: grid; gap: 22px; }
+    .work-card.small { min-height: 244px; }
+    .work-card.small .work-info h3 { font-size: 1.65rem; }
+
+    /* Process */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; }
+    .step { border-top: 1px solid var(--line); padding-top: 22px; counter-increment: step; }
+    .step::before { content: "0" counter(step); color: var(--red); font: 500 1.1rem var(--serif); }
+    .step h3 { font: 500 1.65rem var(--serif); margin: 22px 0 10px; }
+    .step p { color: var(--muted); line-height: 1.75; font-size: .85rem; }
+
+    /* CTA / footer */
+    .cta {
+      text-align: center; padding: 115px 24px; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse at center, rgba(130,0,45,.22), transparent 60%), #0d090d;
+      border-top: 1px solid rgba(240,0,80,.2); border-bottom: 1px solid rgba(240,0,80,.2);
+    }
+    .cta h2 { font: 500 clamp(3.3rem, 8vw, 7rem)/.85 var(--serif); margin: 20px 0 24px; }
+    .cta p { color: var(--muted); line-height: 1.8; margin: 0 auto 30px; max-width: 530px; }
+    footer { padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #81777d; font-size: .68rem; letter-spacing: .12em; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a:hover { color: var(--red); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 850px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 24px; right: 24px; padding: 22px; background: #100b10; border: 1px solid var(--line); flex-direction: column; align-items: stretch; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 8px 0; }
+      .menu-toggle { display: block; }
+      .intro-grid { grid-template-columns: 1fr; gap: 38px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card.large { min-height: 390px; }
+      .work-side { grid-template-columns: 1fr 1fr; }
+      .hero { min-height: 800px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 34px, var(--max)); }
+      .section { padding: 78px 0; }
+      .hero { min-height: 760px; padding-top: 125px; }
+      .hero-brand { margin-bottom: 55px; }
+      .hero h1 { font-size: clamp(3.6rem, 17vw, 5.8rem); }
+      .hero-copy { letter-spacing: .035em; }
+      .hero-note { gap: 12px; flex-wrap: wrap; margin-top: 52px; }
+      .hero-note .note { font-size: .63rem; }
+      .note-divider { height: 26px; }
+      .hero-corner { display: none; }
+      .services-grid, .process-grid, .work-side { grid-template-columns: 1fr; }
+      .service { min-height: auto; }
+      .intro-visual { min-height: 310px; }
+      .work-card.large { min-height: 330px; }
+      .work-card.small { min-height: 260px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home" aria-label="Crimson Cut home">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M50 5V95M50 22a18 18 0 1 0 0 36 18 18 0 0 0 0-36Z" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M44 88C42 72 29 69 20 55c-5-8-7-15-7-15 10 13 17 14 24 20M56 88c2-16 15-19 24-33 5-8 7-15 7-15-10 13-17 14-24 20M30 67c-8-1-14-4-20-11M70 67c8-1 14-4 20-11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">CRIMSON <span>CUT</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">Studio</a><a href="#services">Services</a><a href="#work">Selected work</a><a href="#process">Process</a>
+        <a class="nav-cta" href="#contact">Let's talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="hero-brand">
+            <svg class="brand-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <path d="M50 5V95M50 22a18 18 0 1 0 0 36 18 18 0 0 0 0-36Z" stroke="currentColor" stroke-width="2.4"/>
+              <path d="M44 88C42 72 29 69 20 55c-5-8-7-15-7-15 10 13 17 14 24 20M56 88c2-16 15-19 24-33 5-8 7-15 7-15-10 13-17 14-24 20M30 67c-8-1-14-4-20-11M70 67c8-1 14-4 20-11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <div class="hero-brand-name">CRIMSON CUT</div>
+              <div class="tagline">Smooth edits. Sharp results.</div>
+              <div class="hero-rule"></div>
+            </div>
+          </div>
+          <p class="eyebrow">Video editing studio</p>
+          <h1><span>Your vision.</span><span class="second">Our edit.</span></h1>
+          <p class="hero-copy">Let's turn your ideas into powerful, <em>scroll-stopping</em> content.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">Explore our work <span>↗</span></a>
+            <a class="btn" href="#contact">Start a project <span>↗</span></a>
+          </div>
+          <div class="hero-note">
+            <div class="note"><span class="note-icon">◇</span> Premium quality</div><span class="note-divider"></span>
+            <div class="note"><span class="note-icon">ϟ</span> On-time delivery</div><span class="note-divider"></span>
+            <div class="note"><span class="note-icon">◎</span> Attention to detail</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-corner">CRAFTED TO MAKE AN IMPACT</div>
+    </section>
+
+    <section class="section topline" id="about">
+      <div class="wrap intro-grid">
+        <div class="intro-copy reveal">
+          <span class="eyebrow">The studio</span>
+          <h2 class="serif">More than a cut.<br><span class="accent">A feeling.</span></h2>
+          <p>At Crimson Cut, every frame has a purpose. We shape raw footage, sound and story into polished videos that hold attention and communicate with clarity.</p>
+          <p>From the first idea to the final export, the goal stays the same: make your content feel intentional, memorable and unmistakably yours.</p>
+        </div>
+        <div class="intro-visual reveal">
+          <svg class="orbit-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M50 5V95M50 22a18 18 0 1 0 0 36 18 18 0 0 0 0-36Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M44 88C42 72 29 69 20 55c-5-8-7-15-7-15 10 13 17 14 24 20M56 88c2-16 15-19 24-33 5-8 7-15 7-15-10 13-17 14-24 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="visual-caption">Smooth edits. Sharp results.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section topline" id="services">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">What we do</span>
+          <h2>Made to move<br><span class="accent">your story forward.</span></h2>
+          <p>Thoughtful editing for content that needs to do more than simply fill a screen.</p>
+        </div>
+        <div class="services-grid reveal">
+          <article class="service"><span class="service-number">01 /</span><h3>Short-form content</h3><p>Reels, TikToks and YouTube Shorts edited to capture attention and keep the story moving.</p></article>
+          <article class="service"><span class="service-number">02 /</span><h3>Video ads</h3><p>Clear, engaging promotional edits that bring your message, product or service into focus.</p></article>
+          <article class="service"><span class="service-number">03 /</span><h3>VSL editing</h3><p>Structured long-form edits with purposeful pacing, visual support and polished presentation.</p></article>
+          <article class="service"><span class="service-number">04 /</span><h3>YouTube videos</h3><p>Long-form content shaped with rhythm, clarity and visual consistency from start to finish.</p></article>
+          <article class="service"><span class="service-number">05 /</span><h3>Motion & typography</h3><p>Clean animated titles, captions and graphic elements that strengthen the message.</p></article>
+          <article class="service"><span class="service-number">06 /</span><h3>Creative finishing</h3><p>Music, sound design, stock footage and detail-focused finishing that bring everything together.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section topline" id="work">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Selected work</span>
+          <h2>Stories, shaped<br><span class="accent">frame by frame.</span></h2>
+          <p>A glimpse of the kind of work we create. Replace these placeholders with your own video thumbnails and project links.</p>
+        </div>
+        <div class="work-grid reveal">
+          <a class="work-card large" href="#contact" aria-label="Replace with featured project link">
+            <div class="work-art"><span class="play">▶</span></div>
+            <div class="work-info"><small>Featured project / 01</small><h3>Brand film & storytelling</h3></div>
+          </a>
+          <div class="work-side">
+            <a class="work-card small" href="#contact" aria-label="Replace with short-form project link">
+              <div class="work-art"><span class="play">▶</span></div>
+              <div class="work-info"><small>Short-form / 02</small><h3>Social content</h3></div>
+            </a>
+            <a class="work-card small" href="#contact" aria-label="Replace with VSL project link">
+              <div class="work-art"><span class="play">▶</span></div>
+              <div class="work-info"><small>Long-form / 03</small><h3>VSL & ads</h3></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section topline" id="process">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">The process</span>
+          <h2>Clear from<br><span class="accent">start to finish.</span></h2>
+        </div>
+        <div class="process-grid reveal">
+          <article class="step"><h3>Discover</h3><p>We learn about your goals, audience, references and the feeling you want your video to create.</p></article>
+          <article class="step"><h3>Shape</h3><p>Your footage and script become a clear edit, with pacing and structure built around the message.</p></article>
+          <article class="step"><h3>Refine</h3><p>We polish the details, incorporate your feedback and make sure the final piece feels right.</p></article>
+          <article class="step"><h3>Deliver</h3><p>Your finished video is exported in the agreed format, ready for its next screen.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <span class="eyebrow">Have a project in mind?</span>
+      <h2>Your next idea<br><span class="accent">starts here.</span></h2>
+      <p>Tell us what you're creating. Let's make something worth watching.</p>
+      <!-- Replace the email below with your business email address. -->
+      <a class="btn primary" href="mailto:hello@yourdomain.com?subject=Project%20inquiry">Let's work together <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#home"><span class="brand-name">CRIMSON <span>CUT</span></span></a>
+      <span>© <span id="year"></span> CRIMSON CUT. ALL RIGHTS RESERVED.</span>
+      <div class="footer-links">
+        <!-- Replace # with your real social profile links. -->
+        <a href="#" aria-label="Instagram">INSTAGRAM</a>
+        <a href="#" aria-label="TikTok">TIKTOK</a>
+        <a href="#" aria-label="LinkedIn">LINKEDIN</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
