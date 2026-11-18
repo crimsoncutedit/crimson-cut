@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Dark geometric background">
+<title>Dark geometric background</title>
+<defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#1c1118"/><stop offset=".5" stop-color="#09080a"/><stop offset="1" stop-color="#170a11"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#g)"/><path d="M980 0L1600 0 1600 900 1280 900Z" fill="#ed1455" opacity=".045"/>
+<path d="M0 760L600 160" stroke="#ed1455" stroke-width="2" opacity=".22"/><circle cx="1300" cy="450" r="300" fill="none" stroke="#ed1455" opacity=".2"/><circle cx="1300" cy="450" r="360" fill="none" stroke="#ed1455" opacity=".1"/></svg>

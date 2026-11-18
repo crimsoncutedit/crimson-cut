@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Social reels project placeholder">
+<title>Social reels project placeholder</title>
+<defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#180d14"/><stop offset="1" stop-color="#080709"/></linearGradient><linearGradient id="r"><stop stop-color="#ff4779"/><stop offset="1" stop-color="#8c002f"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#b)"/>
+<rect x="1010" y="95" width="360" height="710" rx="42" fill="#21121b" stroke="#ed1455" stroke-width="3"/>
+<rect x="1040" y="130" width="300" height="640" rx="22" fill="#09080a"/>
+<circle cx="1190" cy="400" r="150" fill="url(#r)" opacity=".6"/><path d="M1090 570L1280 260" stroke="#f8dce5" stroke-width="3" opacity=".6"/>
+<text x="115" y="360" fill="#f7edf1" font-family="Georgia,serif" font-size="112">SOCIAL</text>
+<text x="115" y="475" fill="#ed1455" font-family="Georgia,serif" font-size="112">REELS</text>
+<text x="120" y="550" fill="#bbaeb5" font-family="Arial,sans-serif" font-size="24" letter-spacing="8">SHORT-FORM • RHYTHM • RETENTION</text></svg>

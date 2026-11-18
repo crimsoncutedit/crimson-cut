@@ -1,0 +1,21 @@
+CRIMSON CUT WEBSITE — ASSET GUIDE
+
+FOLDER MAP
+index.html                 Main responsive website
+assets/logo/               Slot for your exact original logo files
+assets/projects/           Three editable SVG portfolio cover placeholders
+assets/backgrounds/        Reusable decorative background SVGs
+assets/icons/              Small SVG interface icons
+assets/brand-post.png      Your supplied brand-post reference image
+videos/                    Put approved video previews here
+
+BEFORE PUBLISHING
+1. Replace YOUR-EMAIL@example.com in index.html with your business email.
+2. Add your social links in the footer (search for the social link placeholders in index.html).
+3. Replace the three project cover SVGs with thumbnails for work you have permission to show.
+4. Add your exact original deer logo into assets/logo/. The current website uses a simple CC monogram instead of inventing a replacement deer mark.
+5. If you add video previews, link the relevant project cards to those files or to a public video host.
+6. Upload the CONTENTS of this folder to the root of your GitHub repository, keeping the folder structure intact.
+
+NOTE
+The project-cover SVGs are designed placeholders, not real client projects or finished video samples. The videos folder is intentionally empty until you add your own work.
